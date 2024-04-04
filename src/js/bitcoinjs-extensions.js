@@ -1910,3 +1910,15 @@ libs.bitcoin.networks.particl = {
   scriptHash: 0x3c,
   wif: 0x6c,
 };
+
+//add for whive 
+libs.bitcoin.networks.whive = {
+  messagePrefix: '\x18Whive Signed Message:\n',
+  bip32: {
+    public: 0x0488B21E,
+    private: 0x0488ADE4,
+  },
+  pubKeyHash: 0x49,
+  scriptHash: 0xb3,
+  wif: 0x80,
+};
