@@ -3638,6 +3638,14 @@
             },
         },
         {
+            name: "WHIVE - Whive",
+            onSelect: function() {
+                network = libs.bitcoin.networks.whive;
+                setHdCoin(658);
+            },
+        },
+
+        {
             name: "XAX - Artax",
             onSelect: function() {
                 network = libs.bitcoin.networks.artax;
