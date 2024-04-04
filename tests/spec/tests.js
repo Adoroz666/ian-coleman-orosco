@@ -1878,6 +1878,16 @@ it('Allows selection of Unobtanium', function(done) {
     };
     testNetwork(done, params);
 });
+it('Allows selection of Whive', function(done) {
+    var params = {
+        selectText: "WHIVE - Whive",
+        phrase: "abandon abandon ability",
+        firstAddress: "wv1qw63vtfh5pdd9j6kdmeu6vkddjx77rqsu9drarf",
+        firstPubKey: "001476a2c5a6f40b5a596acdde79a659ad91bde1821c",
+        firstPrivKey: "L1oAC6Lxi1Z8ewPNFASmAMvvagjHbJKmF8sb43kyXFniWnmradme",
+    };
+    testNetwork(done, params);
+});
 it('Allows selection of Vcash', function(done) {
     var params = {
         selectText: "XVC - Vcash",
