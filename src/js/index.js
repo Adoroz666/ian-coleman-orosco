@@ -51,6 +51,7 @@
     DOM.entropyFilterWarning = DOM.entropyContainer.find(".filter-warning");
     DOM.phrase = $(".phrase");
     DOM.autoCompute = $(".autoCompute");
+    DOM.allowCustomMnemonic = $(".allowCustomMnemonic");
     DOM.splitMnemonic = $(".splitMnemonic");
     DOM.showSplitMnemonic = $(".showSplitMnemonic");
     DOM.phraseSplit = $(".phraseSplit");
@@ -148,6 +149,7 @@
         DOM.bip32Client.on("change", bip32ClientChanged);
         DOM.useEntropy.on("change", setEntropyVisibility);
         DOM.autoCompute.on("change", delayedPhraseChanged);
+        DOM.allowCustomMnemonic.on("change", delayedPhraseChanged);
         DOM.entropy.on("input", delayedEntropyChanged);
         DOM.entropyMnemonicLength.on("change", entropyChanged);
         DOM.pbkdf2Rounds.on("change", pbkdf2RoundsChanged);
@@ -238,6 +240,10 @@
 
     function isUsingAutoCompute() {
         return DOM.autoCompute.prop("checked");
+    }
+
+    function isCustomMnemonicAllowed() {
+        return DOM.allowCustomMnemonic.prop("checked");
     }
 
     function setEntropyVisibility() {
@@ -862,7 +868,7 @@
         // Check the words are valid
         var properPhrase = wordArrayToPhrase(words);
         var isValid = mnemonic.check(properPhrase);
-        if (!isValid) {
+        if (!isValid && !isCustomMnemonicAllowed()) {
             return "Invalid mnemonic";
         }
         return false;
@@ -2987,7 +2993,7 @@
             },
         },
         {
-            name: "LBC - Library Credits",
+            name: "LBC - LBRY Credits",
             onSelect: function() {
                 network = libs.bitcoin.networks.lbry;
                 setHdCoin(140);

@@ -1438,9 +1438,9 @@ it('Allows selection of Landcoin', function(done) {
     };
     testNetwork(done, params);
 });
-it('Allows selection of Library Credits', function(done) {
+it('Allows selection of LBRY Credits', function(done) {
     var params = {
-        selectText: "LBC - Library Credits",
+        selectText: "LBC - LBRY Credits",
         phrase: "abandon abandon ability",
         firstAddress: "bQJEQrHDJyHdqycB32uysh1SWn8Ln8LMdg",
         firstPubKey: "02abd5018c033f59f49f28ee76d93c41323890928e25c171ccc7c61ed753cde8ad",
